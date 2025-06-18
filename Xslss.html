@@ -144,15 +144,6 @@
             text-shadow: 0 0 5px var(--neon-blue);
         }
         
-        .image-placeholder {
-            color: var(--neon-pink);
-            font-size: 1.2rem;
-            padding: 2rem;
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 5px var(--neon-pink);
-        }
-        
         /* Controls */
         .controls {
             display: flex;
@@ -414,11 +405,6 @@
                 font-size: 1.1rem;
             }
             
-            .image-placeholder {
-                font-size: 1.5rem;
-                padding: 3rem;
-            }
-            
             .controls {
                 gap: 1rem;
                 margin: 1.5rem auto;
@@ -486,11 +472,6 @@
                 font-size: 0.9rem;
             }
             
-            .image-placeholder {
-                font-size: 1rem;
-                padding: 1.5rem;
-            }
-            
             .thumbnail {
                 width: 60px;
                 height: 45px;
@@ -535,35 +516,41 @@
     <main class="container">
         <div class="slideshow-container slide-up">
             <div class="slide active">
-                <div class="image-placeholder">Unable to view pictures due to high traffic</div>
+                <img src="https://i.ibb.co/7NJjzd4w/xLs6.jpg" alt="Robotics Project Image 1">
                 <div class="caption">Project Development</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view pictures due to high traffic</div>
+                <img src="https://i.ibb.co/jkz0CNzp/xLs5.jpg" alt="Robotics Project Image 2">
                 <div class="caption">Component Assembly</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view pictures due to high traffic</div>
+                <img src="https://i.ibb.co/8g2JS89M/xLs4.jpg" alt="Robotics Project Image 3">
                 <div class="caption">System Testing</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view pictures due to high traffic</div>
+                <img src="https://i.ibb.co/rKbKpxWp/xLs3.jpg" alt="Robotics Project Image 4">
                 <div class="caption">Circuit Design</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view pictures due to high traffic</div>
+                <img src="https://i.ibb.co/p6zksXCT/xLs2.jpg" alt="Robotics Project Image 5">
                 <div class="caption">Final Prototype</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view videos due to high traffic</div>
+                <video controls>
+                    <source src="../Assets/xLs.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="caption">Project Demonstration</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view videos due to high traffic</div>
+                <video controls>
+                    <source src="../Assets/xLs7.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="caption">System Operation</div>
             </div>
             <div class="slide">
-                <div class="image-placeholder">Unable to view logo due to high traffic</div>
+                <img src="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" alt="Waterloo Robotics Logo">
                 <div class="caption">Waterloo Robotics</div>
             </div>
         </div>
@@ -575,14 +562,14 @@
         </div>
         
         <div class="thumbnail-container slide-up" style="animation-delay: 0.4s;">
-            <div class="thumbnail active" data-index="0">1</div>
-            <div class="thumbnail" data-index="1">2</div>
-            <div class="thumbnail" data-index="2">3</div>
-            <div class="thumbnail" data-index="3">4</div>
-            <div class="thumbnail" data-index="4">5</div>
-            <div class="thumbnail" data-index="5">6</div>
-            <div class="thumbnail" data-index="6">7</div>
-            <div class="thumbnail" data-index="7">8</div>
+            <img src="https://i.ibb.co/7NJjzd4w/xLs6.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+            <img src="https://i.ibb.co/jkz0CNzp/xLs5.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+            <img src="https://i.ibb.co/8g2JS89M/xLs4.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2">
+            <img src="https://i.ibb.co/rKbKpxWp/xLs3.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3">
+            <img src="https://i.ibb.co/p6zksXCT/xLs2.jpg" alt="Thumbnail 5" class="thumbnail" data-index="4">
+            <img src="../Assets/xLs.mp4" alt="Thumbnail 6" class="thumbnail" data-index="5">
+            <img src="../Assets/xLs7.mp4" alt="Thumbnail 7" class="thumbnail" data-index="6">
+            <img src="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" alt="Thumbnail 8" class="thumbnail" data-index="7">
         </div>
         
         <div class="button-group slide-up" style="animation-delay: 0.6s;">
@@ -613,6 +600,12 @@
             
             thumbnails.forEach(thumb => thumb.classList.remove('active'));
             thumbnails[index].classList.add('active');
+            
+            document.querySelectorAll('video').forEach(video => video.pause());
+            
+            if (slides[index].querySelector('video')) {
+                slides[index].querySelector('video').play();
+            }
             
             currentSlide = index;
         }
