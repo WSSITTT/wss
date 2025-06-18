@@ -1,0 +1,20 @@
+{
+  "name": "Waterloo Robotics",
+  "short_name": "Robotics",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0a12",
+  "theme_color": "#0a0a12",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a12">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>About Our Project - Waterloo Robotics</title>
+    <link rel="icon" href="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Shared styles with Index.html */
+        :root {
+            --neon-blue: #0af;
+            --neon-pink: #f0f;
+            --neon-green: #0fa;
+            --dark-bg: #0a0a12;
+            --dark-card: #151520;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+        
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        }
+        
+        @font-face {
+            font-family: 'Rajdhani';
+            src: url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: #eee;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 170, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        header {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            word-wrap: break-word;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px var(--neon-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            margin: 1.2rem 0 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        section {
+            background: var(--dark-card);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+        }
+        
+        p, li {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--neon-green);
+        }
+        
+        strong {
+            color: var(--neon-blue);
+        }
+        
+        .feature-item, .tech-list li {
+            padding-left: 0.8rem;
+            margin-bottom: 0.8rem;
+            border-left: 2px solid var(--neon-green);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover, .tech-list li:hover {
+            border-left: 2px solid var(--neon-blue);
+            transform: translateX(5px);
+        }
+        
+        .fair-details p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        
+        .btn {
+            background: var(--dark-card);
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            padding: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .btn:hover,
+        .btn:focus {
+            background: rgba(0, 255, 170, 0.1);
+            box-shadow: 0 0 12px var(--neon-green);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 45%,
+                rgba(0, 255, 170, 0.2) 50%,
+                transparent 55%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .btn:hover::before,
+        .btn:focus::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+        }
+        
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: rgba(0, 170, 255, 0.1);
+            box-shadow: 0 0 12px var(--neon-blue);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 170, 255, 0.2);
+            font-size: 0.9rem;
+        }
+        
+        .email-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .email-link:hover,
+        .email-link:focus {
+            text-shadow: 0 0 8px var(--neon-blue);
+            outline: none;
+        }
+        
+        /* Animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s forwards;
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--dark-card);
+            border: 2px solid var(--neon-green);
+            border-radius: 5px;
+            z-index: 1000;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            width: 70%;
+            height: 2px;
+            background: var(--neon-green);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        
+        /* Mobile navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--dark-bg);
+            border-left: 1px solid var(--neon-blue);
+            z-index: 999;
+            transition: right 0.3s ease;
+            padding: 4rem 1rem 1rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav .button-group {
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+        
+        /* Backdrop for mobile menu */
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .menu-backdrop.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            header {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .container {
+                padding: 0 2rem 2rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+                border-radius: 10px;
+            }
+            
+            p, li {
+                font-size: 1.1rem;
+            }
+            
+            .button-group {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: none;
+            }
+        }
+        
+        /* Orientation specific styles */
+        @media (orientation: landscape) and (max-height: 500px) {
+            header {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem 1rem;
+            }
+            
+            section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="button-group">
+            <button class="btn" onclick="navigateTo('Index.html')">
+                Home
+            </button>
+            <button class="btn" onclick="navigateTo('Preview.html')">
+                Our Team
+            </button>
+            <button class="btn btn-secondary" onclick="navigateTo('AboutUs.html')">
+                Our Projects
+            </button>
+            <button class="btn" onclick="navigateTo('PastEvents.html')">
+                Past Events
+            </button>
+            <button class="btn" onclick="navigateTo('Xslss.html')">
+                Robot Demo
+            </button>
+        </div>
+    </nav>
+    
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+    
+    <header role="banner">
+        <h1>Our Robotics Project</h1>
+        <h2>Innovation in Automation</h2>
+    </header>
+
+    <main class="container">
+        <section class="slide-up" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">Project Overview</h2>
+            <p>Our team from Waterloo Secondary School in Trinidad and Tobago has developed an innovative robotics solution that combines Arduino microcontrollers with LEGO Mindstorms to create an educational platform for teaching STEM concepts.</p>
+            
+            <h3>Key Features:</h3>
+            <ul class="feature-list">
+                <li class="feature-item"><strong>Hybrid Platform:</strong> Combines Arduino's flexibility with LEGO's buildability</li>
+                <li class="feature-item"><strong>Scratch Programming:</strong> Accessible coding interface for beginners</li>
+                <li class="feature-item"><strong>Modular Design:</strong> Components can be rearranged for different projects</li>
+            </ul>
+        </section>
+
+        <section class="slide-up" style="animation-delay: 0.2s;" aria-labelledby="tech-heading">
+            <h2 id="tech-heading">Technology Stack</h2>
+            <p>We utilized cutting-edge technologies including:</p>
+            <ul class="tech-list">
+                <li><strong>Hardware:</strong> Arduino UNO, LEGO Mindstorms EV3, 3D printed components</li>
+                <li><strong>Software:</strong> Scratch for EV3, Arduino IDE, Python for advanced functions</li>
+                <li><strong>Innovations:</strong> Custom adapter to connect Arduino and LEGO systems</li>
+            </ul>
+        </section>
+
+        <section class="slide-up" style="animation-delay: 0.4s;" aria-labelledby="fair-heading">
+            <h2 id="fair-heading">Science Fair Details</h2>
+            <div class="fair-details">
+                <p><strong>Date:</strong> June 18th, 2025</p>
+                <p><strong>Location:</strong> Matura Secondary School, Trinidad and Tobago</p>
+                <p>Come see our live demonstration and learn more about our project!</p>
+            </div>
+        </section>
+
+        <div class="button-group">
+            <button class="btn" onclick="navigateTo('Index.html')" aria-label="Return to home page">Back to Home</button>
+            <button class="btn btn-secondary" onclick="sendEmail()" aria-label="Contact us via email">Contact Us</button>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>Waterloo Secondary School - <a href="mailto:wssinfotechclub@gmail.com" class="email-link">wssinfotechclub@gmail.com</a></p>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+        
+        function sendEmail() {
+            window.location.href = "mailto:wssinfotechclub@gmail.com";
+        }
+        
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const menuBackdrop = document.getElementById('menuBackdrop');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+        });
+        
+        menuBackdrop.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            this.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Close menu when clicking on a nav item
+        document.querySelectorAll('.mobile-nav .btn').forEach(item => {
+            item.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+                menuBackdrop.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Path typing animation
+        const pathText = "WSS_IT_CLUB";
+        let pathIndex = 0;
+        let isAdding = true;
+        
+        function updatePath() {
+            const currentPath = window.location.pathname.split('/');
+            const basePath = currentPath.slice(0, -1).join('/') + '/';
+            
+            if (isAdding) {
+                window.history.pushState({}, '', basePath + pathText.substring(0, pathIndex + 1));
+                pathIndex++;
+                if (pathIndex === pathText.length) {
+                    setTimeout(() => { isAdding = false; }, 1000);
+                }
+            } else {
+                window.history.pushState({}, '', basePath + pathText.substring(0, pathIndex - 1));
+                pathIndex--;
+                if (pathIndex === 0) {
+                    isAdding = true;
+                }
+            }
+            
+            setTimeout(updatePath, isAdding ? 150 : 50);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections
+            const sections = document.querySelectorAll('.slide-up');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Start path animation
+            setTimeout(updatePath, 500);
+            
+            // Hide menu toggle on desktop
+            function checkScreenSize() {
+                if (window.innerWidth >= 768) {
+                    menuToggle.style.display = 'none';
+                    mobileNav.style.display = 'none';
+                    menuBackdrop.style.display = 'none';
+                } else {
+                    menuToggle.style.display = 'flex';
+                    mobileNav.style.display = 'block';
+                    menuBackdrop.style.display = 'block';
+                }
+            }
+            
+            window.addEventListener('resize', checkScreenSize);
+            checkScreenSize();
+        });
+    </script>
+</body>
+</html>
