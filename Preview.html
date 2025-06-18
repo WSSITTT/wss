@@ -128,6 +128,10 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
         }
         
         .team-list li:hover,
@@ -158,6 +162,116 @@
             display: block;
             margin-bottom: 0.3rem;
             font-size: 1rem;
+        }
+        
+        .team-member-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--neon-green);
+            flex-shrink: 0;
+            background-color: var(--dark-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+        
+        .team-member-info {
+            flex: 1;
+        }
+        
+        /* Profile Modal Styles */
+        .profile-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .profile-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .modal-content {
+            background: var(--dark-card);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--neon-pink);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--neon-green);
+        }
+        
+        .modal-title {
+            color: var(--neon-blue);
+            margin: 0;
+        }
+        
+        .modal-subtitle {
+            color: var(--neon-green);
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+        }
+        
+        .modal-body {
+            line-height: 1.6;
+        }
+        
+        .modal-body p {
+            margin-bottom: 1rem;
         }
         
         .feature-list {
@@ -404,7 +518,7 @@
             }
             
             .team-list {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
                 gap: 1.5rem;
             }
             
@@ -469,6 +583,11 @@
             .team-list strong {
                 font-size: 0.9rem;
             }
+            
+            .team-member-img {
+                width: 50px;
+                height: 50px;
+            }
         }
     </style>
 </head>
@@ -501,6 +620,23 @@
     
     <div class="menu-backdrop" id="menuBackdrop"></div>
     
+    <!-- Profile Modal -->
+    <div class="profile-modal" id="profileModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <img id="modalProfileImg" src="" alt="Profile Image" class="modal-img">
+                <div>
+                    <h3 class="modal-title" id="modalName"></h3>
+                    <p class="modal-subtitle" id="modalRole"></p>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
     <header role="banner">
         <h1>Our Robotics Team</h1>
         <h2>Meet the Executive Members</h2>
@@ -510,16 +646,64 @@
         <section class="slide-up" aria-labelledby="team-heading">
             <h2 id="team-heading">Executive Members</h2>
             <ul class="team-list">
-                <li><strong>Keyshaun Sookdar</strong>: President - Leads our Arduino and robotics projects</li>
-                <li><strong>Daniel White</strong>: Vice President - Specializes in LEGO Mindstorms and team coordination</li>
-                <li><strong>Kyler Preudhomme</strong>: Secretary - Documents our projects and manages Scratch programming</li>
-                <li><strong>Katelyn Riley</strong>: Secretary - Handles communications and computer building workshops</li>
-                <li><strong>Jaden Abinas</strong>: Treasurer - Manages budgets for our hardware projects</li>
-                <li><strong>Uriel Victor</strong>: Treasurer - Oversees equipment maintenance and repairs</li>
+                <li onclick="openProfile('Keyshaun Sookdar', 'President', 'https://i.ibb.co/fzVx9HLC/Keyshaun-S.jpg', 'Keyshaun is our master of Arduino systems, leading our robotics projects with innovative solutions. He specializes in creating complex automation systems that integrate multiple sensors and actuators. His expertise in C++ programming for microcontrollers has been instrumental in our most advanced projects. Keyshaun has developed several custom libraries for our team to simplify complex operations. He mentors junior members in electronics fundamentals and problem-solving approaches. His leadership has taken our Arduino projects to competition-winning levels.')">
+                    <img src="https://i.ibb.co/fzVx9HLC/Keyshaun-S.jpg" alt="Keyshaun Sookdar" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Keyshaun Sookdar</strong>: President - Leads our Arduino and robotics projects
+                    </div>
+                </li>
+                <li onclick="openProfile('Daniel White', 'Vice President', 'https://cdn3.emoji.gg/emojis/47716-incognito.png', 'Daniel is our LEGO Mindstorms specialist, coordinating team efforts across multiple projects. He has a unique ability to break down complex robotic challenges into manageable components. Daniel has developed our training program for new members to learn EV3 programming. His expertise includes sensor integration and mechanical design optimization. He creates documentation standards that help our team maintain consistent quality. Daniel also serves as our primary liaison with other school clubs for collaborative projects.')">
+                    <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Daniel White" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Daniel White</strong>: Vice President - Specializes in LEGO Mindstorms and team coordination
+                    </div>
+                </li>
+                <li onclick="openProfile('Kyler Preudhomme', 'Secretary', 'https://i.ibb.co/twcfgm6C/Kyler-S.jpg', 'Kyler manages our Scratch programming initiatives and project documentation. He has developed an advanced curriculum that teaches computational thinking through visual programming. Kyler maintains our comprehensive project archives and technical documentation. His systematic approach ensures all team members can understand and contribute to projects. He also coordinates our outreach programs to introduce younger students to coding. Kyler\'s attention to detail helps maintain quality across all our documentation.')">
+                    <img src="https://i.ibb.co/twcfgm6C/Kyler-S.jpg" alt="Kyler Preudhomme" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Kyler Preudhomme</strong>: Secretary - Documents our projects and manages Scratch programming
+                    </div>
+                </li>
+                <li onclick="openProfile('Katelyn Riley', 'Secretary', 'https://i.ibb.co/d4nR1Z1Z/Kaitleyn-R.jpg', 'Katelyn handles communications and leads our computer building workshops. She has developed an innovative hands-on curriculum for hardware education. Katelyn coordinates all club communications and maintains our social media presence. Her technical writing skills produce clear instructions for complex hardware projects. She organizes our annual computer building competition that attracts participants from across the region. Katelyn also manages our inventory of components and tools.')">
+                    <img src="https://i.ibb.co/d4nR1Z1Z/Kaitleyn-R.jpg" alt="Katelyn Riley" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Katelyn Riley</strong>: Secretary - Handles communications and computer building workshops
+                    </div>
+                </li>
+                <li onclick="openProfile('Jaden Abinas', 'Treasurer', 'https://cdn3.emoji.gg/emojis/47716-incognito.png', 'Jaden expertly manages budgets for all our hardware projects and acquisitions. He has implemented a transparent financial tracking system for the club. Jaden researches cost-effective solutions without compromising project quality. His negotiation skills have secured valuable discounts from suppliers. He maintains detailed records of all expenditures and funding sources. Jaden also organizes fundraising initiatives to support our ambitious projects. His financial planning ensures we can undertake complex, multi-phase projects.')">
+                    <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Jaden Abinas" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Jaden Abinas</strong>: Treasurer - Manages budgets for our hardware projects
+                    </div>
+                </li>
+                <li onclick="openProfile('Uriel Victor', 'Treasurer', 'https://cdn3.emoji.gg/emojis/47716-incognito.png', 'Uriel oversees equipment maintenance and repairs for all our technical resources. He has developed a preventive maintenance schedule that maximizes equipment lifespan. Uriel troubleshoots complex hardware issues across our diverse technology stack. He maintains our equipment lending system and tracks usage patterns. Uriel has created repair guides that empower other members to handle basic maintenance. His work ensures our valuable resources are always operational when needed.')">
+                    <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Uriel Victor" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Uriel Victor</strong>: Treasurer - Oversees equipment maintenance and repairs
+                    </div>
+                </li>
             </ul>
         </section>
 
-        <section class="slide-up" style="animation-delay: 0.2s;" aria-labelledby="overview-heading">
+        <section class="slide-up" style="animation-delay: 0.2s;" aria-labelledby="upcoming-heading">
+            <h2 id="upcoming-heading">Upcoming Members</h2>
+            <ul class="team-list">
+                <li onclick="openProfile('Demitri', 'Upcoming Member', 'https://i.ibb.co/HLtkJ056/Demitri-P.jpg', 'Demitri is making rapid progress in Arduino programming and circuit design. He has mastered basic sensor integration and is now tackling more complex projects. Demitri shows particular talent for creative problem-solving in hardware challenges. His recent project involved creating a smart lighting system with motion detection. He\'s currently learning wireless communication between Arduino devices. Demitri consistently seeks out challenging projects to expand his skills.')">
+                    <img src="https://i.ibb.co/HLtkJ056/Demitri-P.jpg" alt="Demitri" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Demitri</strong>: Progressing in Arduino and learning quickly
+                    </div>
+                </li>
+                <li onclick="openProfile('Jeremiah', 'Upcoming Member', 'https://i.ibb.co/5XS1LRcs/Jeremiah-D.jpg', 'Jeremiah demonstrates exceptional potential in Arduino system design. He has quickly progressed from basic blink programs to complex sensor networks. Jeremiah recently completed a weather station project that logs environmental data. He\'s particularly interested in IoT applications and home automation systems. His methodical approach to debugging has impressed the entire team. Jeremiah is now mentoring newer members while continuing his own advanced studies.')">
+                    <img src="https://i.ibb.co/5XS1LRcs/Jeremiah-D.jpg" alt="Jeremiah" class="team-member-img">
+                    <div class="team-member-info">
+                        <strong>Jeremiah</strong>: Showing great potential in Arduino programming
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide-up" style="animation-delay: 0.4s;" aria-labelledby="overview-heading">
             <h2 id="overview-heading">Club Activities</h2>
             <p>The WSS IT Club at Waterloo Secondary School in Trinidad and Tobago focuses on hands-on technology education through:</p>
             
@@ -534,7 +718,7 @@
             </ul>
         </section>
 
-        <section class="slide-up" style="animation-delay: 0.4s;" aria-labelledby="tech-heading">
+        <section class="slide-up" style="animation-delay: 0.6s;" aria-labelledby="tech-heading">
             <h2 id="tech-heading">Our Technology Stack</h2>
             <p>We work with cutting-edge technologies including:</p>
             <ul class="tech-list">
@@ -568,6 +752,30 @@
         function sendEmail() {
             window.location.href = "mailto:wssinfotechclub@gmail.com";
         }
+        
+        // Profile Modal Functions
+        function openProfile(name, role, imgSrc, description) {
+            const modal = document.getElementById('profileModal');
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalRole').textContent = role;
+            document.getElementById('modalProfileImg').src = imgSrc;
+            document.getElementById('modalBody').innerHTML = `<p>${description}</p>`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeProfile() {
+            const modal = document.getElementById('profileModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        document.getElementById('modalClose').addEventListener('click', closeProfile);
+        document.getElementById('profileModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProfile();
+            }
+        });
         
         const menuToggle = document.getElementById('menuToggle');
         const mobileNav = document.getElementById('mobileNav');
