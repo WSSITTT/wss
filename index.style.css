@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     display: flex;
     flex-direction: column;
     background-image:
@@ -29,8 +29,8 @@ body {
         radial-gradient(circle at 85% 75%, rgba(0, 255, 128, 0.2) 0%, transparent 35%);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* Improves touch responsiveness */
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
     position: relative;
 }
 
@@ -191,7 +191,7 @@ strong {
 
 .btn-cover-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Default to column for mobile */
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -215,6 +215,8 @@ strong {
     overflow: hidden;
     z-index: 1;
     text-decoration: none;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit width on larger mobile */
 }
 
 .btn-cover::before {
@@ -450,28 +452,31 @@ footer {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: 2.5rem;
 }
 
 .team-list li {
     background: rgba(0, 0, 0, 0.6);
     padding: 2.5rem;
+    border-radius: 30px;
     border-left: 8px solid var(--accent-blue);
     transition: all 0.5s ease;
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-direction: column; /* Stack image and info on mobile */
     align-items: center;
     gap: 1.8rem;
     cursor: pointer;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-radius: 30px;
+    text-align: center; /* Center text for stacked layout */
 }
 
-.team-list li:hover, .team-list li:focus-within {
+.team-list li:hover,
+.team-list li:focus-within {
     transform: translateY(-10px);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 40px var(--accent-green);
     border-left-color: var(--accent-green);
@@ -494,7 +499,7 @@ footer {
 
 .team-member-info {
     flex: 1;
-    text-align: left;
+    text-align: center; /* Center text for stacked layout */
 }
 
 .team-member-info strong {
@@ -552,7 +557,6 @@ footer {
     font-size: 1.15rem;
     color: var(--text-light);
 }
-
 .fair-details strong {
     color: var(--accent-green);
 }
@@ -573,10 +577,10 @@ footer {
     overflow: hidden;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border-radius: 35px;
 }
 
-.event-card:hover, .event-card:focus-within {
+.event-card:hover,
+.event-card:focus-within {
     transform: translateY(-12px);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 40px var(--accent-blue);
     border-color: var(--accent-green);
@@ -595,301 +599,464 @@ footer {
 
 .event-card h3 {
     color: var(--accent-blue);
-    margin-top: 1rem;
-    font-size: 1.8rem;
-    text-shadow: 0 0 20px rgba(0, 224, 255, 0.7);
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    text-shadow: 0 0 15px rgba(0, 224, 255, 0.7);
 }
 
 .event-card p {
-    font-size: 1.05rem;
-    color: var(--text-light);
-    margin: 1.5rem 0;
-}
-
-.event-date {
-    font-weight: bold;
-    color: var(--accent-green);
-    text-shadow: 0 0 15px rgba(0, 255, 128, 0.6);
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-}
-
-.project-card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 3px solid var(--border-color);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
-    transition: all 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-radius: 35px;
-    padding: 3rem;
-}
-
-.project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 40px var(--accent-green);
-    border-color: var(--accent-green);
-}
-
-.project-card h3 {
-    color: var(--accent-blue);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px rgba(0, 224, 255, 0.7);
-}
-
-.project-card p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.9;
     font-size: 1.1rem;
+    color: var(--text-light);
 }
 
-.project-card .btn-cover {
-    font-size: 1rem;
-    padding: 1rem 2.5rem;
-}
-
-#our-projects-section .section-content {
-    margin-top: 5rem;
-}
-
-.showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-    justify-items: center;
-}
-
-.showcase-item {
-    background: rgba(0, 0, 0, 0.6);
-    border: 3px solid var(--border-color);
-    border-radius: 20px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
-    transition: all 0.5s ease;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-}
-
-.showcase-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-blue);
-    border-color: var(--accent-green);
-}
-
-.showcase-item h3 {
-    font-size: 1.5rem;
+.event-year {
+    font-family: 'Orbitron', sans-serif;
     color: var(--accent-green);
-    margin-bottom: 0.8rem;
-}
-
-.showcase-item p {
-    font-size: 1rem;
-    margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-shadow: 0 0 12px rgba(0, 255, 128, 0.6);
 }
 
 .slideshow-container {
     position: relative;
-    max-width: 1000px;
-    margin: auto;
+    width: 100%;
+    margin: 3rem auto;
+    border-radius: 35px;
     overflow: hidden;
-    border-radius: 25px;
-    box-shadow: 0 0 40px rgba(0, 224, 255, 0.5);
-    border: 2px solid var(--border-color);
-}
-
-.slideshow-controls {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+    border: 3px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 2rem;
+    min-height: 450px;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
 }
 
 .slide {
     display: none;
     width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
 .slide.active {
     display: block;
+    animation: fadeInScale 1.2s ease forwards;
 }
 
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.slide img,
 .slide video {
-    width: 100%;
-    height: auto;
+    max-width: 95%;
+    max-height: 65vh;
+    object-fit: contain;
     border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    border: 4px solid rgba(0, 224, 255, 0.5);
 }
 
-.slide-content {
-    padding: 20px;
+.caption {
+    padding: 25px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1.3rem;
+    color: var(--accent-blue);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px rgba(0, 224, 255, 0.8);
+    margin-top: 1.5rem;
 }
 
-.slideshow-thumbnails {
+.controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 1rem;
+    gap: 2rem;
+    margin: 3rem auto;
+    width: 100%;
     flex-wrap: wrap;
 }
 
+.btn-slideshow {
+    flex: 1 1 auto;
+    max-width: 200px;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 18px;
+    margin: 3rem auto;
+    width: 100%;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 25px;
+    border: 3px solid var(--border-color);
+    overflow-x: auto; /* Enable horizontal scrolling for thumbnails */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox scrollbar */
+    scrollbar-color: var(--accent-blue) transparent; /* Firefox scrollbar color */
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
+}
+
+.thumbnail-container::-webkit-scrollbar {
+    height: 14px;
+}
+.thumbnail-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 14px;
+}
+.thumbnail-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+    border-radius: 14px;
+    border: 4px solid var(--secondary-bg);
+}
+
 .thumbnail {
-    width: 80px;
-    height: 50px;
+    width: 110px;
+    height: 90px;
+    object-fit: cover;
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    border: 2px solid transparent;
-    border-radius: 10px;
+    border: 5px solid transparent;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.thumbnail:hover,
+.thumbnail:focus {
+    border-color: var(--accent-green);
+    transform: scale(1.12);
+    outline: none;
+    box-shadow: 0 0 30px rgba(0, 255, 128, 0.9);
 }
 
 .thumbnail.active {
-    opacity: 1;
     border-color: var(--accent-blue);
+    box-shadow: 0 0 35px rgba(0, 224, 255, 1);
+    transform: scale(1.1);
 }
 
-.thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
+/* --- Mobile Specific Styles (max-width: 767px) --- */
+@media (max-width: 767px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem; /* Smaller font size for mobile */
     }
-
     h2 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller font size for mobile */
     }
-
-    .subtitle {
-        font-size: 1.2rem;
+    p, li {
+        font-size: 1rem; /* Smaller base font size */
     }
-
-    .intro-text, p, li {
-        font-size: 1rem;
-    }
-
     .main-content-wrapper {
-        padding: 2rem 0;
+        padding: 2rem 0; /* Reduced padding */
     }
-
     .content-section {
-        margin: 4rem auto;
-        padding: 1.5rem;
+        margin: 4rem auto; /* Reduced margin */
+        padding: 1.5rem; /* Reduced padding */
     }
-
     .section-header {
-        margin-bottom: 2.5rem;
-        padding: 1.5rem;
+        margin-bottom: 3rem; /* Reduced margin */
+        padding: 1.5rem; /* Reduced padding */
+        border-radius: 25px; /* Slightly less rounded */
     }
-
+    .subtitle {
+        font-size: 1.1rem; /* Smaller subtitle */
+    }
     .intro-card, .glass-panel, .event-card {
-        padding: 2.5rem 2rem;
+        padding: 2.5rem; /* Reduced padding */
+        margin-bottom: 2rem; /* Reduced margin */
+        border-radius: 30px; /* Slightly less rounded */
     }
-
-    .btn-cover-group, .button-group {
-        gap: 1.5rem;
+    .intro-text {
+        font-size: 1.05rem; /* Smaller intro text */
     }
-
+    .btn-cover-group {
+        gap: 1.5rem; /* Reduced gap */
+        flex-direction: column; /* Ensure column layout on mobile */
+    }
     .btn-cover {
-        padding: 1.2rem 3rem;
-        font-size: 1.1rem;
+        padding: 1rem 2.5rem; /* Smaller padding */
+        font-size: 1.1rem; /* Smaller font */
+        letter-spacing: 1.5px; /* Reduced letter spacing */
+        max-width: 280px; /* Constrain width */
     }
-
+    .btn {
+        padding: 0.8rem 1.5rem; /* Smaller padding */
+        font-size: 1rem; /* Smaller font */
+        min-width: 48px; /* Ensure sufficient touch target */
+        min-height: 48px; /* Ensure sufficient touch target */
+    }
     .menu-toggle {
+        width: 50px; /* Smaller toggle */
+        height: 50px;
         top: 1rem;
         right: 1rem;
-        width: 50px;
-        height: 50px;
+        border-radius: 20px;
+        gap: 7px;
     }
-
+    .menu-toggle span {
+        height: 4px;
+    }
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
     .mobile-nav {
-        width: 100%;
+        width: 80%; /* Slightly narrower mobile nav */
+        padding: 6rem 1.5rem 1.5rem; /* Adjusted padding */
     }
-
     .team-list li {
-        flex-direction: column;
+        padding: 1.8rem; /* Reduced padding */
+        gap: 1rem; /* Reduced gap */
+        flex-direction: column; /* Stack image and info */
         text-align: center;
-        gap: 1rem;
-        padding: 2rem;
     }
-
     .team-member-img {
-        width: 80px;
+        width: 80px; /* Smaller image */
         height: 80px;
-        margin-bottom: 1rem;
+        border: 4px solid var(--accent-green); /* Thinner border */
     }
-
-    .team-member-info {
-        text-align: center;
-    }
-
     .team-member-info strong {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Smaller font */
     }
-
     .member-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem; /* Smaller description */
     }
-
+    .feature-item, .tech-list li {
+        padding: 1.5rem; /* Reduced padding */
+        border-left-width: 6px; /* Thinner border */
+    }
+    .event-card {
+        padding: 2.5rem; /* Reduced padding */
+    }
+    .event-card h3 {
+        font-size: 1.4rem; /* Smaller font */
+    }
+    .slideshow-container {
+        min-height: 300px; /* Shorter slideshow */
+        margin: 2rem auto; /* Reduced margin */
+        border-radius: 30px; /* Slightly less rounded */
+    }
+    .slide img, .slide video {
+        max-height: 50vh; /* Shorter max height */
+        border-radius: 20px; /* Slightly less rounded */
+        border-width: 3px; /* Thinner border */
+    }
+    .caption {
+        font-size: 1.1rem; /* Smaller caption */
+        padding: 15px; /* Reduced padding */
+    }
+    .controls {
+        gap: 1.5rem; /* Reduced gap */
+        margin: 2rem auto; /* Reduced margin */
+    }
+    .btn-slideshow {
+        padding: 1rem 1.5rem; /* Smaller padding */
+        font-size: 1rem; /* Smaller font */
+        max-width: 160px; /* Constrain width */
+    }
+    .thumbnail-container {
+        padding: 15px; /* Reduced padding */
+        gap: 12px; /* Reduced gap */
+        border-radius: 20px; /* Slightly less rounded */
+        border-width: 2px; /* Thinner border */
+    }
+    .thumbnail {
+        width: 90px; /* Smaller thumbnail */
+        height: 70px;
+        border-width: 3px; /* Thinner border */
+        border-radius: 10px; /* Slightly less rounded */
+    }
     footer {
-        padding: 1.5rem;
-        margin-top: 4rem;
-        border-radius: 20px 20px 0 0;
-    }
-
-    .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        padding: 1.5rem; /* Reduced padding */
+        margin-top: 4rem; /* Reduced margin */
+        font-size: 0.95rem; /* Smaller font */
+        border-radius: 25px 25px 0 0; /* Slightly less rounded */
     }
 }
 
-@media (max-width: 480px) {
+/* --- Tablet/Medium Screens (min-width: 768px) --- */
+@media (min-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 4.5rem;
     }
-
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+        font-size: 3rem;
     }
+    .content-section {
+        margin: 10rem auto;
+        padding: 3rem;
+    }
+    .section-header {
+        padding: 3rem;
+    }
+    .intro-card, .glass-panel, .event-card {
+        padding: 4.5rem;
+    }
+    .btn-cover-group {
+        flex-direction: row; /* Row layout for larger screens */
+        flex-wrap: wrap;
+        max-width: 800px;
+    }
+    .btn-cover {
+        width: auto; /* Auto width when in row layout */
+        max-width: none; /* Remove max-width constraint */
+    }
+    .team-list {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Two columns for team members */
+    }
+    .team-list li {
+        flex-direction: row; /* Row layout for image and info */
+        text-align: left;
+    }
+    .team-member-info {
+        text-align: left;
+    }
+    .slideshow-container {
+        min-height: 650px;
+    }
+    .slide img, .slide video {
+        max-height: 80vh;
+    }
+    .menu-toggle {
+        display: none; /* Hide menu toggle on desktop */
+    }
+    .mobile-nav {
+        display: none; /* Hide mobile nav on desktop */
+    }
+    .menu-backdrop {
+        display: none; /* Hide backdrop on desktop */
+    }
+}
 
+/* --- Desktop Screens (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 5.5rem;
+    }
+    h2 {
+        font-size: 3.5rem;
+    }
+    .btn-cover-group {
+        max-width: 1000px;
+    }
+    .team-list {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+    .slideshow-container {
+        min-height: 750px;
+    }
+    .slide img, .slide video {
+        max-height: 85vh;
+    }
+}
+
+/* --- Large Desktop Screens (min-width: 1200px) --- */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 6.5rem;
+    }
+    h2 {
+        font-size: 3.8rem;
+    }
+    .content-section {
+        max-width: 1400px; /* Even wider sections */
+    }
+}
+
+/* --- Landscape Orientation for Mobile Devices (max-height: 600px and max-width: 991px) --- */
+@media (orientation: landscape) and (max-width: 991px) {
+    .main-content-wrapper {
+        padding: 1rem 0;
+    }
     .content-section {
         margin: 2rem auto;
         padding: 1rem;
     }
-
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
     .intro-card, .glass-panel, .event-card {
         padding: 1.5rem;
     }
-
+    .intro-text, p, li {
+        font-size: 0.9rem;
+    }
     .btn-cover {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-
-    .btn {
         padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
-
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
     .menu-toggle {
-        width: 45px;
-        height: 45px;
         top: 0.8rem;
         right: 0.8rem;
+        width: 40px;
+        height: 40px;
+        gap: 4px;
+        border-radius: 10px;
+    }
+    .menu-toggle span {
+        height: 2px;
+    }
+    .mobile-nav {
+        padding-top: 4rem;
+    }
+    .team-member-img {
+        width: 60px;
+        height: 60px;
+    }
+    .team-member-info strong {
+        font-size: 1rem;
+    }
+    .member-description {
+        font-size: 0.8rem;
+    }
+    .event-card h3 {
+        font-size: 1.2rem;
+    }
+    .event-year {
+        font-size: 0.8rem;
+    }
+    .slideshow-container {
+        min-height: 250px;
+    }
+    .slide img, .slide video {
+        max-height: 45vh;
+    }
+    .caption {
+        font-size: 0.9rem;
+    }
+    .thumbnail {
+        width: 70px;
+        height: 50px;
+    }
+    .team-list li {
+        flex-direction: row; 
+        text-align: left;
+    }
+    .team-member-info {
+        text-align: left;
     }
 }
