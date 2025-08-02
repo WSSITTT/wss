@@ -1,0 +1,178 @@
+{
+  "members": [
+    {
+      "id": "member_001",
+      "name": "Keyshaun Sookdar",
+      "role": "President",
+      "description": "Keyshaun is our master of Arduino systems, leading our robotics projects with innovative solutions. He specializes in creating complex automation systems that integrate multiple sensors and actuators. His expertise in C++ programming for microcontrollers has been instrumental in our most advanced projects. He mentors junior members in electronics fundamentals and problem-solving approaches. His leadership has taken our Arduino projects to competition-winning levels.",
+      "image": "https://i.ibb.co/fzVx9HLC/Keyshaun-S.jpg",
+      "status": "Executive"
+    },
+    {
+      "id": "member_002",
+      "name": "Daniel White",
+      "role": "Vice President",
+      "description": "Daniel is our LEGO Mindstorms specialist, coordinating team efforts across multiple projects. He has a unique ability to break down complex robotic challenges into manageable components. Daniel has developed our training program for new members to learn EV3 programming. His expertise includes sensor integration and mechanical design optimization. He also serves as our primary liaison with other school clubs for collaborative projects.",
+      "image": "https://cdn3.emoji.gg/emojis/47716-incognito.png",
+      "status": "Executive"
+    },
+    {
+      "id": "member_003",
+      "name": "Kyler Preudhomme",
+      "role": "Secretary",
+      "description": "Kyler manages our Scratch programming initiatives and project documentation. She has developed an advanced curriculum that teaches computational thinking through visual programming. Kyler maintains our comprehensive project archives and technical documentation. His systematic approach ensures all team members can understand and contribute to projects. She also coordinates our outreach programs to introduce younger students to coding.",
+      "image": "https://i.ibb.co/twcfgm6C/Kyler-S.jpg",
+      "status": "Executive"
+    },
+    {
+      "id": "member_004",
+      "name": "Katelyn Riley",
+      "role": "Secretary",
+      "description": "Katelyn handles communications and leads our computer building workshops. She has developed an innovative hands-on curriculum for hardware education. Katelyn coordinates all club communications and maintains our social media presence. Her technical writing skills produce clear instructions for complex hardware projects. She organizes our annual computer building competition that attracts participants from across the region.",
+      "image": "https://i.ibb.co/d4nR1Z1Z/Kaitleyn-R.jpg",
+      "status": "Executive"
+    },
+    {
+      "id": "member_005",
+      "name": "Jaden Abinas",
+      "role": "Treasurer",
+      "description": "Jaden expertly manages budgets for all our hardware projects and acquisitions. He has implemented a transparent financial tracking system for the club. Jaden researches cost-effective solutions without compromising project quality. His negotiation skills have secured valuable discounts from suppliers. He maintains detailed records of all expenditures and funding sources. His financial planning ensures we can undertake complex, multi-phase projects.",
+      "image": "https://cdn3.emoji.gg/emojis/47716-incognito.png",
+      "status": "Executive"
+    },
+    {
+      "id": "member_006",
+      "name": "Uriel Victor",
+      "role": "Treasurer",
+      "description": "Uriel oversees equipment maintenance and repairs for all our technical resources. He has developed a preventive maintenance schedule that maximizes equipment lifespan. Uriel troubleshoots complex hardware issues across our diverse technology stack. He maintains our equipment lending system and tracks usage patterns. His work ensures our valuable resources are always operational when needed.",
+      "image": "https://cdn3.emoji.gg/emojis/47716-incognito.png",
+      "status": "Executive"
+    },
+    {
+      "id": "member_007",
+      "name": "Demitri",
+      "role": "Upcoming Member",
+      "description": "Demitri is making rapid progress in Arduino programming and circuit design. He has mastered basic sensor integration and is now tackling more complex projects. Demitri shows particular talent for creative problem-solving in hardware challenges. His recent project involved creating a smart lighting system with motion detection. He's currently learning wireless communication between Arduino devices. Demitri consistently seeks out challenging projects to expand his skills.",
+      "image": "https://i.ibb.co/HLtkJ056/Demitri-P.jpg",
+      "status": "Upcoming"
+    },
+    {
+      "id": "member_008",
+      "name": "Jeremiah",
+      "role": "Upcoming Member",
+      "description": "Jeremiah demonstrates exceptional potential in Arduino system design. He has quickly progressed from basic blink programs to complex sensor networks. Jeremiah recently completed a weather station project that logs environmental data. He's particularly interested in IoT applications and home automation systems. His methodical approach to debugging has impressed the entire team. Jeremiah is now mentoring newer members while continuing his own advanced studies.",
+      "image": "https://i.ibb.co/5XS1LRcs/Jeremiah-D.jpg",
+      "status": "Upcoming"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project_001",
+      "name": "Arduino Projects",
+      "description": "Building interactive electronics and automation systems"
+    },
+    {
+      "id": "project_002",
+      "name": "LEGO Mindstorms",
+      "description": "Creating programmable robots for problem-solving challenges"
+    },
+    {
+      "id": "project_003",
+      "name": "Scratch Programming",
+      "description": "Teaching computational thinking through visual coding"
+    },
+    {
+      "id": "project_004",
+      "name": "Computer Building & Repair",
+      "description": "Hands-on hardware workshops and tech support"
+    },
+    {
+      "id": "project_005",
+      "name": "3D Printing",
+      "description": "Designing and prototyping physical components"
+    },
+    {
+      "id": "project_006",
+      "name": "Science Fair Projects",
+      "description": "Developing innovative solutions for annual competitions"
+    }
+  ],
+  "events": [
+    {
+      "id": "event_001",
+      "year": 2023,
+      "title": "Regional Robotics Championship",
+      "description": "Went into finals in the regional robotics competition with our autonomous sorting robot built with LEGO Mindstorms and custom Arduino sensors."
+    },
+    {
+      "id": "event_002",
+      "year": 2024,
+      "title": "Innovation Award",
+      "description": "Recognized for most creative solution - a Scratch-programmable interface for LEGO robots that helps teach younger students programming concepts."
+    },
+    {
+      "id": "event_003",
+      "year": 2024,
+      "title": "Tech Expo",
+      "description": "Demonstrated computer building and repair techniques to community members, helping refurbish 12 donated computers for local schools."
+    }
+  ],
+  "slideshow_media": [
+    {
+      "id": "media_001",
+      "type": "image",
+      "src": "https://i.ibb.co/7NJjzd4w/xLs6.jpg",
+      "alt": "Project Development - Initial concept and design phase.",
+      "caption": "Project Development - Initial concept and design phase."
+    },
+    {
+      "id": "media_002",
+      "type": "image",
+      "src": "https://i.ibb.co/jkz0CNzp/xLs5.jpg",
+      "alt": "Component Assembly - Precision assembly of robotic parts.",
+      "caption": "Component Assembly - Precision assembly of robotic parts."
+    },
+    {
+      "id": "media_003",
+      "type": "image",
+      "src": "https://i.ibb.co/8g2JS89M/xLs4.jpg",
+      "alt": "System Testing - Rigorous testing of integrated systems.",
+      "caption": "System Testing - Rigorous testing of integrated systems."
+    },
+    {
+      "id": "media_004",
+      "type": "image",
+      "src": "https://i.ibb.co/rKbKpxWp/xLs3.jpg",
+      "alt": "Circuit Design - Advanced circuit board layout and wiring.",
+      "caption": "Circuit Design - Advanced circuit board layout and wiring."
+    },
+    {
+      "id": "media_005",
+      "type": "image",
+      "src": "https://i.ibb.co/p6zksXCT/xLs2.jpg",
+      "alt": "Final Prototype - The culmination of design and engineering.",
+      "caption": "Final Prototype - The culmination of design and engineering."
+    },
+    {
+      "id": "media_006",
+      "type": "video",
+      "src": "../Assets/xLs.mp4",
+      "alt": "Project Demonstration - Live demonstration of robot capabilities.",
+      "caption": "Project Demonstration - Live demonstration of robot capabilities."
+    },
+    {
+      "id": "media_007",
+      "type": "video",
+      "src": "../Assets/xLs7.mp4",
+      "alt": "System Operation - Close-up view of the robot in action.",
+      "caption": "System Operation - Close-up view of the robot in action."
+    },
+    {
+      "id": "media_008",
+      "type": "image",
+      "src": "https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png",
+      "alt": "Waterloo Secondary School IT Club Logo",
+      "caption": "Waterloo Secondary School IT Club Logo"
+    }
+  ]
+}
