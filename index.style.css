@@ -696,7 +696,6 @@ footer {
     margin-top: 0;
 }
 
-/* Base styles for slideshow */
 .slideshow-container {
     position: relative;
     max-width: 1000px;
@@ -766,7 +765,6 @@ footer {
     border-radius: 8px;
 }
 
-/* New responsive styles for mobile */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -859,7 +857,6 @@ footer {
     }
 }
 
-/* Smaller mobile devices */
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
