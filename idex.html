@@ -2,189 +2,271 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberNexus Innovations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Waterloo Secondary School IT Club</title>
+    <link rel="icon" href="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="index.style.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-    <div id="threejs-background"></div>
-
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
     </button>
-    <div class="menu-backdrop" id="menuBackdrop"></div>
-    
+
     <nav class="mobile-nav" id="mobileNav">
         <div class="button-group">
-            <a href="#about-us" class="btn">About Us</a>
-            <a href="#our-projects" class="btn">Our Projects</a>
-            <a href="#tech-stack" class="btn">Tech Stack</a>
-            <a href="#events-fair" class="btn">Events & Fair</a>
-            <a href="#" class="btn btn-secondary">Contact Us</a>
+            <a href="/" class="btn" onclick="navigateTo(event, '/', '#home-section')">Home</a>
+            <a href="/our-team" class="btn" onclick="navigateTo(event, '/our-team', '#our-team-section')">Our Team</a>
+            <a href="/our-projects" class="btn" onclick="navigateTo(event, '/our-projects', '#our-projects-section')">Our Projects</a>
+            <a href="/past-events" class="btn" onclick="navigateTo(event, '/past-events', '#past-events-section')">Past Events</a>
+            <a href="/project-showcase" class="btn" onclick="navigateTo(event, '/project-showcase', '#project-showcase-section')">Project Showcase</a>
         </div>
     </nav>
-    
+
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <div id="threejs-background"></div>
+
     <div class="main-content-wrapper">
-        <header id="intro-section" class="content-section">
-            <div class="section-header">
-                <h1>CyberNexus Innovations</h1>
-                <p class="subtitle">Pioneering the future, one byte at a time.</p>
-            </div>
+        <section id="home-section" class="content-section">
+            <header class="section-header">
+                <h1>WSS IT CLUB</h1>
+                <p class="subtitle">Waterloo Secondary School</p>
+                <p class="subtitle">Innovation in Technology & Robotics</p>
+            </header>
             <div class="intro-card">
+                <h2>Welcome to Our Digital Nexus</h2>
                 <p class="intro-text">
-                    Welcome to the forefront of technological exploration. At CyberNexus, we are more than just a team; we are a collective of visionaries, engineers, and creators. Our mission is to push the boundaries of what's possible, crafting innovative solutions that shape tomorrow's digital landscape.
+                    We are the official <strong>Waterloo Secondary School IT Club</strong> from Trinidad and Tobago. Our mission is to foster innovation and practical skills in technology. We specialize in a diverse range of fields including:
+                    <br><strong>Arduino Microcontrollers, LEGO Mindstorms Robotics, Scratch Programming, Computer Building & Repair, 3D Printing, and Advanced Software Development.</strong>
+                </p>
+                <p class="intro-text">
+                    Explore our projects, meet our dedicated team, and discover the exciting world of IT through our club's journey.
                 </p>
                 <div class="btn-cover-group">
-                    <a href="#our-projects" class="btn-cover">Explore Our Work</a>
-                </div>
-            </div>
-        </header>
-
-        <section id="about-us" class="content-section">
-            <h2>About Us</h2>
-            <div class="glass-panel">
-                <div class="section-content">
-                    <p>
-                        <strong>CyberNexus Innovations</strong> was born from a shared passion for technology and a commitment to excellence. We believe that the best solutions are born from collaboration, curiosity, and a relentless pursuit of knowledge. Our team is dedicated to creating impactful, cutting-edge software and hardware that solves real-world problems.
-                    </p>
-                    <p>
-                        From artificial intelligence and blockchain to virtual reality and robotics, we are constantly exploring new frontiers. We pride ourselves on a culture of continuous learning, fostering an environment where every team member is empowered to innovate and grow.
-                    </p>
+                    <a href="/our-team" class="btn-cover" onclick="navigateTo(event, '/our-team', '#our-team-section')">Our Team</a>
+                    <a href="/our-projects" class="btn-cover" onclick="navigateTo(event, '/our-projects', '#our-projects-section')">Our Projects</a>
+                    <a href="/past-events" class="btn-cover" onclick="navigateTo(event, '/past-events', '#past-events-section')">Past Events</a>
+                    <a href="/project-showcase" class="btn-cover" onclick="navigateTo(event, '/project-showcase', '#project-showcase-section')">Project Showcase</a>
                 </div>
             </div>
         </section>
 
-        <section id="our-team" class="content-section">
-            <h2>Our Team</h2>
-            <div class="glass-panel">
-                <ul class="team-list">
-                    <li>
-                        <div class="team-member-img">
-                            <img src="https://via.placeholder.com/100" alt="Team Member 1">
-                        </div>
-                        <div class="team-member-info">
-                            <strong>Jane Doe</strong>
-                            <span>Lead Engineer</span>
-                            <p class="member-description">
-                                A pioneer in AI-driven solutions, with a focus on machine learning and natural language processing.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="team-member-img">
-                            <img src="https://via.placeholder.com/100" alt="Team Member 2">
-                        </div>
-                        <div class="team-member-info">
-                            <strong>John Smith</strong>
-                            <span>Cybersecurity Specialist</span>
-                            <p class="member-description">
-                                Expertise in network security, ethical hacking, and creating resilient defense systems.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="team-member-img">
-                            <img src="https://via.placeholder.com/100" alt="Team Member 3">
-                        </div>
-                        <div class="team-member-info">
-                            <strong>Alice Williams</strong>
-                            <span>VR/AR Developer</span>
-                            <p class="member-description">
-                                Specializes in crafting immersive virtual and augmented reality experiences for various platforms.
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="our-projects" class="content-section">
-            <h2>Our Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project Nexus</h3>
-                    <p>A decentralized data management platform powered by blockchain technology, ensuring data integrity and security.</p>
-                    <a href="#" class="btn-cover">Learn More</a>
+        <section id="our-team-section" class="content-section">
+            <header class="section-header">
+                <h1>Our Dedicated Team</h1>
+                <h2>Meet the Innovators of WSS IT Club</h2>
+            </header>
+            <div class="section-content">
+                <div class="glass-panel">
+                    <h2>Executive Members</h2>
+                    <ul class="team-list">
+                        <li>
+                            <img src="https://i.ibb.co/fzVx9HLC/Keyshaun-S.jpg" alt="Keyshaun Sookdar" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Keyshaun Sookdar</strong>: <span>President</span>
+                                <p class="member-description">Keyshaun is our master of Arduino systems, leading our robotics projects with innovative solutions. He specializes in creating complex automation systems that integrate multiple sensors and actuators. His expertise in C++ programming for microcontrollers has been instrumental in our most advanced projects. He mentors junior members in electronics fundamentals and problem-solving approaches. His leadership has taken our Arduino projects to competition-winning levels.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Daniel White" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Daniel White</strong>: <span>Vice President</span>
+                                <p class="member-description">Daniel is our LEGO Mindstorms specialist, coordinating team efforts across multiple projects. He has a unique ability to break down complex robotic challenges into manageable components. Daniel has developed our training program for new members to learn EV3 programming. His expertise includes sensor integration and mechanical design optimization. He also serves as our primary liaison with other school clubs for collaborative projects.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://i.ibb.co/twcfgm6C/Kyler-S.jpg" alt="Kyler Preudhomme" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Kyler Preudhomme</strong>: <span>Secretary</span>
+                                <p class="member-description">Kyler manages our Scratch programming initiatives and project documentation. She has developed an advanced curriculum that teaches computational thinking through visual programming. Kyler maintains our comprehensive project archives and technical documentation. His systematic approach ensures all team members can understand and contribute to projects. She also coordinates our outreach programs to introduce younger students to coding.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://i.ibb.co/d4nR1Z1Z/Kaitleyn-R.jpg" alt="Katelyn Riley" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Katelyn Riley</strong>: <span>Secretary</span>
+                                <p class="member-description">Katelyn handles communications and leads our computer building workshops. She has developed an innovative hands-on curriculum for hardware education. Katelyn coordinates all club communications and maintains our social media presence. Her technical writing skills produce clear instructions for complex hardware projects. She organizes our annual computer building competition that attracts participants from across the region.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Jaden Abinas" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Jaden Abinas</strong>: <span>Treasurer</span>
+                                <p class="member-description">Jaden expertly manages budgets for all our hardware projects and acquisitions. He has implemented a transparent financial tracking system for the club. Jaden researches cost-effective solutions without compromising project quality. His negotiation skills have secured valuable discounts from suppliers. He maintains detailed records of all expenditures and funding sources. His financial planning ensures we can undertake complex, multi-phase projects.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://cdn3.emoji.gg/emojis/47716-incognito.png" alt="Uriel Victor" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Uriel Victor</strong>: <span>Treasurer</span>
+                                <p class="member-description">Uriel oversees equipment maintenance and repairs for all our technical resources. He has developed a preventive maintenance schedule that maximizes equipment lifespan. Uriel troubleshoots complex hardware issues across our diverse technology stack. He maintains our equipment lending system and tracks usage patterns. His work ensures our valuable resources are always operational when needed.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="project-card">
-                    <h3>Aura AI</h3>
-                    <p>An advanced AI assistant designed to streamline workflows and enhance productivity across digital environments.</p>
-                    <a href="#" class="btn-cover">Learn More</a>
-                </div>
-                <div class="project-card">
-                    <h3>Synapse VR</h3>
-                    <p>An immersive virtual reality training simulation for complex engineering tasks and collaborative design.</p>
-                    <a href="#" class="btn-cover">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="tech-stack" class="content-section">
-            <h2>Tech Stack</h2>
-            <div class="glass-panel">
-                <ul class="tech-list">
-                    <li>
-                        <strong>Languages:</strong> Python, C++, JavaScript, Rust, Solidity
-                    </li>
-                    <li>
-                        <strong>Frameworks:</strong> PyTorch, TensorFlow, React, Node.js, Three.js
-                    </li>
-                    <li>
-                        <strong>Tools:</strong> Docker, Kubernetes, Git, CI/CD pipelines
-                    </li>
-                    <li>
-                        <strong>Platforms:</strong> AWS, Google Cloud Platform, Ethereum
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="events-fair" class="content-section">
-            <h2>Events & Fair</h2>
-            <div class="events-container">
-                <div class="event-card">
-                    <h3>Future Tech Summit</h3>
-                    <p>Join us as we showcase our latest innovations at the annual Future Tech Summit. Connect with our team and see live demonstrations of our projects.</p>
-                    <p class="event-date">Date: October 26-28, 2024</p>
-                </div>
-                <div class="event-card">
-                    <h3>CyberNexus Open House</h3>
-                    <p>An exclusive virtual event for students and aspiring engineers to learn about our company culture and career opportunities.</p>
-                    <p class="event-date">Date: November 15, 2024</p>
+                <div class="glass-panel">
+                    <h2>Upcoming Members</h2>
+                    <ul class="team-list">
+                        <li>
+                            <img src="https://i.ibb.co/HLtkJ056/Demitri-P.jpg" alt="Demitri" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Demitri</strong>: <span>Upcoming Member</span>
+                                <p class="member-description">Demitri is making rapid progress in Arduino programming and circuit design. He has mastered basic sensor integration and is now tackling more complex projects. Demitri shows particular talent for creative problem-solving in hardware challenges. His recent project involved creating a smart lighting system with motion detection. He's currently learning wireless communication between Arduino devices. Demitri consistently seeks out challenging projects to expand his skills.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://i.ibb.co/5XS1LRcs/Jeremiah-D.jpg" alt="Jeremiah" class="team-member-img">
+                            <div class="team-member-info">
+                                <strong>Jeremiah</strong>: <span>Upcoming Member</span>
+                                <p class="member-description">Jeremiah demonstrates exceptional potential in Arduino system design. He has quickly progressed from basic blink programs to complex sensor networks. Jeremiah recently completed a weather station project that logs environmental data. He's particularly interested in IoT applications and home automation systems. His methodical approach to debugging has impressed the entire team. Jeremiah is now mentoring newer members while continuing his own advanced studies.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="showcase-section" class="content-section">
-            <h2>Showcase</h2>
-            <div class="slideshow-container">
-                <div class="slide active">
-                    <video src="https://example.com/video1.mp4" controls muted></video>
-                    <div class="slide-content">
-                        <h3>Our Latest Project</h3>
-                        <p>A video showcase of our most recent AI-powered platform.</p>
+        <section id="our-projects-section" class="content-section">
+            <header class="section-header">
+                <h1>Our Innovative Projects</h1>
+                <h2>Driving Technology Forward</h2>
+            </header>
+            <div class="section-content">
+                <div class="glass-panel">
+                    <h2>Project Overview</h2>
+                    <p>Our team from Waterloo Secondary School in Trinidad and Tobago has developed innovative solutions across various IT fields.</p>
+                    <h3>Our Core Programs:</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item"><strong>Arduino Projects:</strong> Building interactive electronics and automation systems</li>
+                        <li class="feature-item"><strong>LEGO Mindstorms:</strong> Creating programmable robots for problem-solving challenges</li>
+                        <li class="feature-item"><strong>Scratch Programming:</strong> Teaching computational thinking through visual coding</li>
+                        <li class="feature-item"><strong>Computer Building & Repair:</strong> Hands-on hardware workshops and tech support</li>
+                        <li class="feature-item"><strong>3D Printing:</strong> Designing and prototyping physical components</li>
+                        <li class="feature-item"><strong>Science Fair Projects:</strong> Developing innovative solutions for annual competitions</li>
+                    </ul>
+                </div>
+                <div class="glass-panel">
+                    <h2>Technology Stack</h2>
+                    <p>We work with cutting-edge technologies including:</p>
+                    <ul class="tech-list">
+                        <li><strong>Hardware:</strong> Arduino UNO/Mega, Raspberry Pi, LEGO Mindstorms EV3, 3D Printers, PC Components</li>
+                        <li><strong>Software:</strong> Scratch, Arduino IDE, Python, EV3 Classroom, Tinkercad, Fusion 360</li>
+                        <li><strong>Innovations:</strong> Custom sensor arrays, automated systems, educational tools for younger students</li>
+                    </ul>
+                </div>
+                <div class="glass-panel">
+                    <h2>Science Fair 2025</h2>
+                    <div class="fair-details">
+                        <p><strong>Date:</strong> June 18th, 2025</p>
+                        <p><strong>Location:</strong> Matura Secondary School, Trinidad and Tobago</p>
+                        <p>Come see our live demonstration and learn more about our project!</p>
                     </div>
                 </div>
-                <div class="slide">
-                    <video src="https://example.com/video2.mp4" controls muted></video>
-                    <div class="slide-content">
-                        <h3>VR Experience Demo</h3>
-                        <p>A demonstration of our immersive virtual reality training environment.</p>
+            </div>
+        </section>
+
+        <section id="past-events-section" class="content-section">
+            <header class="section-header">
+                <h1>Our Past Achievements</h1>
+                <h2>A Legacy of Innovation</h2>
+            </header>
+            <div class="section-content events-container">
+                <div class="event-card">
+                    <span class="event-year">2023</span>
+                    <h3>Regional Robotics Championship</h3>
+                    <p>Went into finals in the regional robotics competition with our autonomous sorting robot built with LEGO Mindstorms and custom Arduino sensors.</p>
+                </div>
+                <div class="event-card">
+                    <span class="event-year">2024</span>
+                    <h3>Innovation Award</h3>
+                    <p>Recognized for most creative solution - a Scratch-programmable interface for LEGO robots that helps teach younger students programming concepts.</p>
+                </div>
+                <div class="event-card">
+                    <span class="event-year">2024</span>
+                    <h3>Tech Expo</h3>
+                    <p>Demonstrated computer building and repair techniques to community members, helping refurbish 12 donated computers for local schools.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-showcase-section" class="content-section">
+            <header class="section-header">
+                <h1>Project Showcase</h1>
+                <h2>Innovations from WSS IT Club</h2>
+            </header>
+            <div class="section-content">
+                <div class="slideshow-container" id="slideshowContainer">
+                    <div class="slide active">
+                        <img src="https://i.ibb.co/7NJjzd4w/xLs6.jpg" alt="Project Development - Initial concept and design phase.">
+                        <div class="caption">Project Development - Initial concept and design phase.</div>
                     </div>
+                    <div class="slide">
+                        <img src="https://i.ibb.co/jkz0CNzp/xLs5.jpg" alt="Component Assembly - Precision assembly of robotic parts.">
+                        <div class="caption">Component Assembly - Precision assembly of robotic parts.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://i.ibb.co/8g2JS89M/xLs4.jpg" alt="System Testing - Rigorous testing of integrated systems.">
+                        <div class="caption">System Testing - Rigorous testing of integrated systems.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://i.ibb.co/rKbKpxWp/xLs3.jpg" alt="Circuit Design - Advanced circuit board layout and wiring.">
+                        <div class="caption">Circuit Design - Advanced circuit board layout and wiring.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://i.ibb.co/p6zksXCT/xLs2.jpg" alt="Final Prototype - The culmination of design and engineering.">
+                        <div class="caption">Final Prototype - The culmination of design and engineering.</div>
+                    </div>
+                    <div class="slide">
+                        <video controls preload="metadata">
+                            <source src="../Assets/xLs.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="caption">Project Demonstration - Live demonstration of robot capabilities.</div>
+                    </div>
+                    <div class="slide">
+                        <video controls preload="metadata">
+                            <source src="../Assets/xLs7.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="caption">System Operation - Close-up view of the robot in action.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" alt="Waterloo Secondary School IT Club Logo">
+                        <div class="caption">Waterloo Secondary School IT Club Logo</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-slideshow" id="prevBtn">Previous</button>
+                    <button class="btn btn-slideshow btn-secondary" id="playPauseBtn">Pause</button>
+                    <button class="btn btn-slideshow" id="nextBtn">Next</button>
+                </div>
+
+                <div class="thumbnail-container" id="thumbnailContainer">
+                    <img src="https://i.ibb.co/7NJjzd4w/xLs6.jpg" alt="Thumbnail for Project Development" class="thumbnail active" data-index="0">
+                    <img src="https://i.ibb.co/jkz0CNzp/xLs5.jpg" alt="Thumbnail for Component Assembly" class="thumbnail" data-index="1">
+                    <img src="https://i.ibb.co/8g2JS89M/xLs4.jpg" alt="Thumbnail for System Testing" class="thumbnail" data-index="2">
+                    <img src="https://i.ibb.co/rKbKpxWp/xLs3.jpg" alt="Thumbnail for Circuit Design" class="thumbnail" data-index="3">
+                    <img src="https://i.ibb.co/p6zksXCT/xLs2.jpg" alt="Thumbnail for Final Prototype" class="thumbnail" data-index="4">
+                    <img src="https://placehold.co/80x60/0a0a12/ffffff?text=Video" alt="Thumbnail for Project Demonstration" class="thumbnail" data-index="5">
+                    <img src="https://placehold.co/80x60/0a0a12/ffffff?text=Video" alt="Thumbnail for System Operation" class="thumbnail" data-index="6">
+                    <img src="https://i.postimg.cc/KzJpnb3x/Robotic-Logo.png" alt="Thumbnail for Waterloo Secondary School IT Club Logo" class="thumbnail" data-index="7">
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 CyberNexus Innovations. All rights reserved. Designed with <span style="color: red;">&hearts;</span> by a code aficionado.</p>
-        <p><a href="#" class="footer-link">Privacy Policy</a> | <a href="#" class="footer-link">Terms of Service</a></p>
+        <p>&copy; 2025 WSS IT Club. All Rights Reserved. Contact: <a href="mailto:wssinfotechclub@gmail.com" class="footer-link">wssinfotechclub@gmail.com</a></p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="index.script.js"></script>
 </body>
 </html>
