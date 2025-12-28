@@ -1,63 +1,20 @@
-* {
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
+:root{--g:#1f9d55;--bg:#fff;--txt:#111;--card:#f5f7fa}
+[data-theme=dark]{--bg:#121212;--txt:#eee;--card:#1e1e1e}
 
-body {
-  margin: 0;
-  height: 100vh;
-  background: #f5f7fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+*{box-sizing:border-box;font-family:system-ui}
+body{margin:0;height:100vh;background:var(--bg);color:var(--txt);display:flex;align-items:center;justify-content:center}
 
-.login-card {
-  background: white;
-  padding: 40px;
-  width: 100%;
-  max-width: 380px;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
+#themeToggle{position:fixed;top:15px;right:15px;border:0;background:var(--card);padding:8px 10px;border-radius:6px;cursor:pointer}
 
-h1 {
-  margin: 0;
-  font-size: 28px;
-}
+.login-wrap{display:flex;gap:40px;align-items:center}
+.login-card{background:var(--card);padding:35px;border-radius:10px;min-width:300px;animation:fade .8s}
+input,button{width:100%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc}
+button{background:var(--g);color:#fff;border:0;font-weight:600;cursor:pointer}
+button:hover{opacity:.9}
 
-p {
-  color: #555;
-  margin-bottom: 25px;
-}
+.waterfall{height:220px;width:220px;overflow:hidden;mask-image:linear-gradient(transparent,black,black,transparent)}
+#flow{animation:scroll 18s linear infinite}
+#flow div{padding:6px 0;color:var(--g);font-weight:600}
 
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #0b5cff;
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #094fd1;
-}
+@keyframes scroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1}}

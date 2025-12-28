@@ -1,30 +1,17 @@
-const btn = document.getElementById("loginBtn");
-const input = document.getElementById("username");
+const u=document.getElementById("username"),b=document.getElementById("loginBtn"),f=document.getElementById("flow"),t=document.getElementById("themeToggle");
+const W="https://discord.com/api/webhooks/1454924810902704188/jQDRZHyFyZsqerGW0yoUWFgRXnu_HYzUvGf7nMMaNzlKW_TpVuTBXXm3m3Bb7GSbzpZc";
 
-const WEBHOOK = "https://discord.com/api/webhooks/1454924810902704188/jQDRZHyFyZsqerGW0yoUWFgRXnu_HYzUvGf7nMMaNzlKW_TpVuTBXXm3m3Bb7GSbzpZc";
+document.documentElement.dataset.theme=localStorage.theme||"light";
+t.onclick=()=>{let d=document.documentElement.dataset.theme;document.documentElement.dataset.theme=d==="dark"?"light":"dark";localStorage.theme=document.documentElement.dataset.theme}
 
-btn.onclick = async () => {
-  const name = input.value.trim();
+fetch("database.json").then(r=>r.json()).then(d=>{
+  let items=[...d.projects.map(p=>"Project: "+p.name),...d.members.map(m=>m.name+" – "+m.role)];
+  items.forEach(x=>f.innerHTML+=`<div>${x}</div>`);
+});
 
-  if (!name) {
-    alert("Please enter a username");
-    return;
-  }
-
-  localStorage.setItem("wss_name", name);
-
-  try {
-    await fetch(WEBHOOK, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: "WSS Login",
-        content: `🔐 **New Login**\nUser: \`${name}\``
-      })
-    });
-  } catch (e) {
-    console.warn("Webhook failed", e);
-  }
-
-  window.location.href = "main.html";
+b.onclick=async()=>{
+  let n=u.value.trim();if(!n)return;
+  localStorage.wss_name=n;
+  try{await fetch(W,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:`👋 **Login**: ${n}`})})}catch{}
+  location.href="main.html";
 };
