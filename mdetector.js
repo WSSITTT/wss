@@ -1,0 +1,16 @@
+(()=>{const p=location.pathname.replace(/\\/g,"/"),q=new URLSearchParams(location.search),h=location.host;
+const set=(k,v)=>{try{localStorage.setItem(k,v)}catch{}},get=k=>{try{return localStorage.getItem(k)}catch{return null}};
+if(q.has("desktop"))set("wss_force","desktop");
+if(q.has("mobile"))set("wss_force","mobile");
+const force=get("wss_force");
+if(force==="desktop")return;
+const inMobile=p.startsWith("/m/")||p==="/m"||p==="/m/";
+if(inMobile)return;
+const ua=navigator.userAgent||"",isUA=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+const touch=("ontouchstart"in window)||navigator.maxTouchPoints>0;
+const small=Math.min(screen.width,window.innerWidth||9999)<=900;
+const mobile=(force==="mobile")||(isUA&&(touch||small))||(touch&&small);
+if(!mobile)return;
+const base="/m/index.html";
+location.replace(base+(location.search?location.search+"&":"?")+"from=desktop");
+})();
