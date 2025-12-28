@@ -1,7 +1,3 @@
-const name = localStorage.getItem("wss_name");
-
-if (!name) {
-  window.location.href = "index.html";
-}
-
-document.getElementById("user").textContent = `Logged in as ${name}`;
+let n=localStorage.wss_name;
+if(!n)location.href="index.html";
+document.getElementById("user").textContent=n;

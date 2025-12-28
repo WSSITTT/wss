@@ -1,30 +1,5 @@
-* {
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: #f5f7fa;
-}
-
-header {
-  background: #0b5cff;
-  color: white;
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-main {
-  padding: 30px;
-}
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  max-width: 800px;
-}
+*{box-sizing:border-box;font-family:system-ui}
+body{margin:0;background:#f5f7fa}
+header{background:#1f9d55;color:#fff;padding:18px 25px;display:flex;justify-content:space-between}
+main{padding:30px}
+.card{background:#fff;padding:25px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
