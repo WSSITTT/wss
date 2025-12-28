@@ -5,7 +5,7 @@
       "name": "Keyshaun Sookdar",
       "role": "President",
       "description": "Keyshaun is our master of Arduino systems, leading our robotics projects with innovative solutions. He specializes in creating complex automation systems that integrate multiple sensors and actuators. His expertise in C++ programming for microcontrollers has been instrumental in our most advanced projects. He mentors junior members in electronics fundamentals and problem-solving approaches. His leadership has taken our Arduino projects to competition-winning levels.",
-      "image": "https://i.ibb.co/fzVx9HLC/Keyshaun-S.jpg",
+      "image": "_i_/Keyshaun.png",
       "status": "Executive"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Kyler Preudhomme",
       "role": "Lead Secretary",
       "description": "Kyler manages our Scratch programming initiatives and project documentation. She has developed an advanced curriculum that teaches computational thinking through visual programming. Kyler maintains our comprehensive project archives and technical documentation. His systematic approach ensures all team members can understand and contribute to projects. She also coordinates our outreach programs to introduce younger students to coding.",
-      "image": "https://i.ibb.co/twcfgm6C/Kyler-S.jpg",
+      "image": "_i_/Kyler.png",
       "status": "Executive"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Katelyn Riley",
       "role": "Secretary",
       "description": "Katelyn handles communications and leads our computer building workshops. She has developed an innovative hands-on curriculum for hardware education. Katelyn coordinates all club communications and maintains our social media presence. Her technical writing skills produce clear instructions for complex hardware projects. She organizes our annual computer building competition that attracts participants from across the region.",
-      "image": "https://i.ibb.co/d4nR1Z1Z/Kaitleyn-R.jpg",
+      "image": "_i_/Katelyn.png",
       "status": "Executive"
     },
     {
@@ -45,16 +45,16 @@
       "name": "Uriel Victor",
       "role": "Treasurer",
       "description": "Uriel oversees equipment maintenance and repairs for all our technical resources. He has developed a preventive maintenance schedule that maximizes equipment lifespan. Uriel troubleshoots complex hardware issues across our diverse technology stack. He maintains our equipment lending system and tracks usage patterns. His work ensures our valuable resources are always operational when needed.",
-      "image": "https://cdn3.emoji.gg/emojis/47716-incognito.png",
+      "image": "_i_/Uriel.jpeg",
       "status": "Executive"
     },
     {
       "id": "member_007",
       "name": "Demitri",
-      "role": "Upcoming Member",
+      "role": "PRO",
       "description": "Demitri is making rapid progress in Arduino programming and circuit design. He has mastered basic sensor integration and is now tackling more complex projects. Demitri shows particular talent for creative problem-solving in hardware challenges. His recent project involved creating a smart lighting system with motion detection. He's currently learning wireless communication between Arduino devices. Demitri consistently seeks out challenging projects to expand his skills.",
-      "image": "https://i.ibb.co/HLtkJ056/Demitri-P.jpg",
-      "status": "Upcoming"
+      "image": "_i_/Dimitri.png",
+      "status": "Executive"
     },
     {
       "id": "member_008",
@@ -63,7 +63,16 @@
       "description": "Jeremiah demonstrates exceptional potential in Arduino system design. He has quickly progressed from basic blink programs to complex sensor networks. Jeremiah recently completed a weather station project that logs environmental data. He's particularly interested in IoT applications and home automation systems. His methodical approach to debugging has impressed the entire team. Jeremiah is now mentoring newer members while continuing his own advanced studies.",
       "image": "https://i.ibb.co/5XS1LRcs/Jeremiah-D.jpg",
       "status": "Upcoming"
+    },
+    {
+  "id": "member_009",
+  "name": "Yaminah Douglas",
+  "role": "Secretary",
+  "description": "Yaminah supports club operations by organizing meeting notes, managing updates, and helping the team stay on schedule. She helps document projects clearly so members can collaborate faster and newer members can learn smoothly. Yaminah also assists with planning events and improving how the club presents its work to the school community. Her attention to detail keeps our projects and outreach running professionally.",
+  "image": "_i_/Yaminah.png",
+  "status": "Executive"
     }
+
   ],
   "projects": [
     {

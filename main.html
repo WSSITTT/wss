@@ -1,44 +1,30 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WSS IT Club</title>
-<link rel="stylesheet" href="style/main.css">
+<title>WSS IT Club</title><link rel="stylesheet" href="style/main.css">
 </head><body>
-
-<header>
-  <h1>WSS IT Club</h1>
-  <div class="right">
-    <span id="user"></span>
-    <button id="theme">🌓</button>
-  </div>
-</header>
-
-<nav class="tabs">
-  <button class="tab active" data-tab="overview">Overview</button>
-  <button class="tab" data-tab="members">Members</button>
-  <button class="tab" data-tab="projects">Projects</button>
-</nav>
-
+<header><div class="brand"><h1>WSS IT Club</h1><div class="meta"><span id="user"></span><span class="dot"></span><span id="date"></span></div></div><div class="actions"><button id="theme" class="icon">🌓</button><button id="logout" class="btn">Logout</button></div></header>
+<nav class="tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="members">Members</button><button class="tab" data-tab="projects">Projects</button><button class="tab" data-tab="showcase">Showcase</button></nav>
 <main>
-  <section id="overview" class="panel active">
-    <div class="stats">
-      <div class="stat"><span id="totalMembers">0</span><p>Members</p></div>
-      <div class="stat"><span id="execCount">0</span><p>Executives</p></div>
-      <div class="stat"><span id="projectCount">0</span><p>Projects</p></div>
-    </div>
-  </section>
+<section id="overview" class="panel active">
+<div class="hero"><div><h2>Welcome back</h2><p class="sub">A modern hub for WSS IT Club projects, members, and media.</p></div><div class="quick"><div class="chip" id="chipMembers">0 Members</div><div class="chip" id="chipExec">0 Executives</div><div class="chip" id="chipProj">0 Projects</div></div></div>
+<div class="stats"><div class="stat"><span id="totalMembers">0</span><p>Total Members</p></div><div class="stat"><span id="execCount">0</span><p>Executives</p></div><div class="stat"><span id="upCount">0</span><p>Upcoming</p></div><div class="stat"><span id="projectCount">0</span><p>Projects</p></div></div>
+</section>
 
-  <section id="members" class="panel">
-    <div class="subtabs">
-      <button class="sub active" data-filter="Executive">Executive</button>
-      <button class="sub" data-filter="Upcoming">Upcoming</button>
-    </div>
-    <div id="memberGrid" class="grid"></div>
-  </section>
+<section id="members" class="panel">
+<div class="toolbar"><div class="subtabs"><button class="sub active" data-filter="Executive">Executive</button><button class="sub" data-filter="Upcoming">Upcoming</button></div><input id="memberSearch" class="search" placeholder="Search members..." autocomplete="off"></div>
+<div id="memberGrid" class="grid"></div>
+</section>
 
-  <section id="projects" class="panel">
-    <div id="projectGrid" class="grid"></div>
-  </section>
+<section id="projects" class="panel">
+<div class="toolbar"><div class="title">Our Projects</div><input id="projectSearch" class="search" placeholder="Search projects..." autocomplete="off"></div>
+<div id="projectGrid" class="grid"></div>
+</section>
+
+<section id="showcase" class="panel">
+<div class="toolbar"><div class="title">Project Showcase</div><div class="hint">Videos auto-play as you scroll.</div></div>
+<div id="showcaseGrid" class="masonry"></div>
+</section>
 </main>
-
+<div id="modal" class="modal"><div class="modal-card"><button id="modalClose" class="icon x">✕</button><div id="modalBody"></div></div></div>
 <script src="javascript/main.js"></script>
 </body></html>
