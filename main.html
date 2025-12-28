@@ -8,16 +8,16 @@
     <button class="icon" id="theme" title="Theme">🌓</button>
     <nav class="nav">
       <a class="navlink" href="#projects">Projects</a>
-      <a class="navlink" href="#shop">Shop</a>
+      <a class="navlink" href="shop.html">Shop</a>
       <a class="navlink" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<div id="top" class="bg">
-  <div class="grain"></div>
-  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
-</div>
+<div id="top" class="bg"><div class="grain"></div><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div></div>
+
+<aside class="rail left" id="railL"></aside>
+<aside class="rail right" id="railR"></aside>
 
 <main class="wrap">
   <section class="hero">
@@ -25,10 +25,7 @@
       <div class="badge"><span class="dot"></span> Waterloo Secondary School • IT Club</div>
       <h1>Build, learn, and ship real tech — together.</h1>
       <p class="lead">A modern hub for our club’s robotics, hardware, software, and student-led projects. Clean, professional, and built for growth.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">Explore Projects</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
+      <div class="cta"><a class="btn primary" href="#projects">Explore Projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
       <div class="mini">
         <div class="chip"><b id="statMembers">0</b><span>Members</span></div>
         <div class="chip"><b id="statExec">0</b><span>Executives</span></div>
@@ -41,10 +38,7 @@
         <div class="heroTop">
           <div class="stack">
             <div class="avatarRow" id="avatars"></div>
-            <div class="heroText">
-              <b>Welcome back</b>
-              <p>Scroll through sections designed like a premium product site — not a plain doc.</p>
-            </div>
+            <div class="heroText"><b>Welcome back</b><p>Clean design. Smooth motion. Real projects.</p></div>
           </div>
           <div class="pill">Ready to build</div>
         </div>
@@ -65,9 +59,9 @@
       <p class="muted">We blend learning with building — hardware sessions, robotics, troubleshooting, software development, and showcase-ready results.</p>
     </div>
     <div class="sright">
-      <article class="card reveal"><div class="tabbit">01</div><h3>Build & Repair</h3><p>PC hardware, diagnostics, and hands-on repairs. Learn how systems work from the inside out.</p><a class="more" href="#projects">More details</a></article>
-      <article class="card reveal"><div class="tabbit">02</div><h3>Robotics & Control</h3><p>Arduino + LEGO Mindstorms. Sensors, logic, movement, and smart problem-solving.</p><a class="more" href="#projects">More details</a></article>
-      <article class="card reveal"><div class="tabbit">03</div><h3>Software & Tools</h3><p>Web projects, automation, and useful tools for school and club operations.</p><a class="more" href="#projects">More details</a></article>
+      <article class="card reveal"><div class="tabbit">01</div><h3>Build & Repair</h3><p>PC hardware, diagnostics, and hands-on repairs.</p><a class="more" href="#projects">More details</a></article>
+      <article class="card reveal"><div class="tabbit">02</div><h3>Robotics & Control</h3><p>Arduino + LEGO Mindstorms. Sensors, logic, movement.</p><a class="more" href="#projects">More details</a></article>
+      <article class="card reveal"><div class="tabbit">03</div><h3>Software & Tools</h3><p>Web projects, automation, and useful tools.</p><a class="more" href="#projects">More details</a></article>
     </div>
   </section>
 
@@ -76,63 +70,28 @@
       <div>
         <small class="cap">PROJECTS</small>
         <h2>Student-built projects</h2>
-        <p class="muted">Automatically loaded from <code>database.json</code>. Keep the JSON updated — the site stays current.</p>
+        <p class="muted">Loaded from <code>database.json</code>.</p>
       </div>
-      <div class="tools">
-        <input id="projectSearch" class="search" placeholder="Search projects..." autocomplete="off">
-      </div>
+      <div class="tools"><input id="projectSearch" class="search" placeholder="Search projects..." autocomplete="off"></div>
     </div>
     <div id="projectGrid" class="grid"></div>
   </section>
 
-  <section id="shop" class="section">
-    <div class="head reveal">
-      <div>
-        <small class="cap">SHOP</small>
-        <h2>Support the club</h2>
-        <p class="muted">Fundraising and merch (coming soon). This section is ready when you add items.</p>
-      </div>
-    </div>
-    <div class="grid">
-      <div class="prod reveal"><h3>Club Merch</h3><p>Shirts, stickers, and accessories for supporters.</p><button class="btn small" disabled>Coming soon</button></div>
-      <div class="prod reveal"><h3>Donations</h3><p>Help fund parts, tools, robotics kits, and materials.</p><button class="btn small" disabled>Coming soon</button></div>
-      <div class="prod reveal"><h3>Workshops</h3><p>Paid sessions to support training and equipment.</p><button class="btn small" disabled>Coming soon</button></div>
-    </div>
-  </section>
-
   <section id="contact" class="section">
     <div class="head reveal">
-      <div>
-        <small class="cap">CONTACT</small>
-        <h2>Reach the team</h2>
-        <p class="muted">For partnerships, support, events, and school coordination.</p>
-      </div>
+      <div><small class="cap">CONTACT</small><h2>Reach the team</h2><p class="muted">For partnerships, support, events, and school coordination.</p></div>
     </div>
-
     <div class="grid">
-      <div class="contact reveal">
-        <h3>Keyshaun Sookdar</h3>
-        <p class="muted">Leader of WSS IT CLUB</p>
-        <div class="kv"><span>Number</span><b>+1 (868) 739-3193</b></div>
-        <div class="kv"><span>Email</span><a class="link" href="mailto:KSookdar@proton.me">KSookdar@proton.me</a></div>
-      </div>
-
-      <div class="contact reveal">
-        <h3>Danual Bridgemohan</h3>
-        <p class="muted">Teacher/Supervisor of WSS IT CLUB</p>
-        <div class="kv"><span>Number</span><b>+1 (868) 460-3810</b></div>
-      </div>
-
-      <div class="contact reveal">
-        <h3>More contacts</h3>
-        <p class="muted">Add more staff, team leads, or department contacts here when ready.</p>
-        <button class="btn small" id="logout">Logout</button>
-      </div>
+      <div class="contact reveal"><h3>Keyshaun Sookdar</h3><p class="muted">Leader of WSS IT CLUB</p><div class="kv"><span>Number</span><b>+1 (868) 739-3193</b></div><div class="kv"><span>Email</span><a class="link" href="mailto:KSookdar@proton.me">KSookdar@proton.me</a></div></div>
+      <div class="contact reveal"><h3>Danual Bridgemohan</h3><p class="muted">Teacher/Supervisor of WSS IT CLUB</p><div class="kv"><span>Number</span><b>+1 (868) 460-3810</b></div></div>
+      <div class="contact reveal"><h3>More contacts</h3><p class="muted">Add more staff or department contacts when ready.</p><button class="btn small" id="logout">Logout</button></div>
     </div>
   </section>
 
   <footer class="foot"><span>© <span id="yr"></span> WSS IT Club</span><span class="sep">•</span><span class="muted">Modern, professional layout</span></footer>
 </main>
+
+<div class="modal" id="modal"><div class="mcard" id="mcard"><button class="mclose" id="mclose">✕</button><div class="mmedia" id="mmedia"></div></div></div>
 
 <script src="javascript/main.js"></script>
 </body></html>
